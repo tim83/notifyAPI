@@ -1,0 +1,24 @@
+name: Publish container
+
+# Run workflow on tags starting with v (eg. v2, v1.2.0)
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  publish:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Build:checkout"
+        uses: actions/checkout@v2
+      - name: 'Build:dockerimage'
+        uses: docker/build-push-action@v2
+        with:
+          registry: ghcr.io
+          username: "tim83"
+          password: ${{ secrets.GITHUB_TOKEN }}
+          repository: tim83/notify_api
+          tags: |
+            ghcr.io/${{ github.repository }}:${{ github.ref }}
+            ghcr.io/${{ github.repository }}:latest
