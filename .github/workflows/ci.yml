@@ -61,8 +61,6 @@ jobs:
     steps:
       - name: "Build:checkout"
         uses: actions/checkout@v3
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
       - name: 'Build:dockerimage'
         uses: docker/build-push-action@v3
         with:
@@ -70,11 +68,6 @@ jobs:
           username: "tim83"
           password: ${{ secrets.GITHUB_TOKEN }}
           repository: tim83/notify_api
-          builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: |
-            ${{ env.GITHUB_SHA }}
-            latest
-          platforms: linux/amd64,linux/arm64,linux/arm
-          cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/caddy-cloudflare:buildcache
-          cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/caddy-cloudflare:buildcache,mode=max
+          tags: latest
+          platforms: linux/arm
