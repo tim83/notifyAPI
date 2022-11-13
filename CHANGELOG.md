@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.1 (2022-11-13)
+### Fix
+* **publish.yml:** Attempt #101 ([`ca84cc9`](https://github.com/tim83/notify_api/commit/ca84cc935f4d7c0a88fbd99c6dd40a037b2bbb5a))
+
 ## v0.2.0 (2022-11-13)
 ### Feature
 * **app.py:** Add wake-up ([`5f2b485`](https://github.com/tim83/notify_api/commit/5f2b485638b692f22d58f79cb47e56a04a9c4660))
