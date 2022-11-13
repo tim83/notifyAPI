@@ -72,8 +72,8 @@ jobs:
           repository: tim83/notify_api
           builder: ${{ steps.buildx.outputs.name }}
           tags: |
-            ghcr.io/${{ github.repository }}:${{ github.ref }}
-            ghcr.io/${{ github.repository }}:latest
+            ${{ github.ref }}
+            latest
           platforms: linux/amd64,linux/arm64,linux/arm
           cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/caddy-cloudflare:buildcache
           cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/caddy-cloudflare:buildcache,mode=max
