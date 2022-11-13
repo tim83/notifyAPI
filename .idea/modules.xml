@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/notifyAPI.iml" filepath="$PROJECT_DIR$/.idea/notifyAPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../notify_api/.idea/notify_api.iml" filepath="$PROJECT_DIR$/../notify_api/.idea/notify_api.iml" />
     </modules>
   </component>
 </project>

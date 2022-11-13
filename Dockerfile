@@ -1,8 +1,8 @@
 FROM docker.io/library/python:3.10-bullseye
 
-COPY ../notify /app
+COPY . /app
 
 WORKDIR /app
 RUN pip install .
 ENTRYPOINT [ "python" ]
-CMD ["-m", "notify.motion_api"]
+CMD ["app.py"]
