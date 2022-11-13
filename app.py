@@ -4,6 +4,8 @@ Webserver to act as an API that acts upon receiving a webhook request
 
 import os
 
+import sshtools.device
+import sshtools.wakeup
 import timtools.log
 from flask import Flask
 
@@ -73,6 +75,20 @@ def file_saved():
 
     logger.info("Telefoon in wifi-netwerk. Bewegingsmelding niet verzonden")
     return "Phone present, file not sent"
+
+
+@app.route("/wakeup-thinkcentre")
+def wakup_thinkcentre():
+    """
+    Wake-up thinkcentre upon recieving the request
+    """
+    thinkcentre = sshtools.device.Device("thinkcentre")
+    sshtools.wakeup.wake(thinkcentre)
+
+    sender = get_notification_sender()
+    sender.send_text(f"Waking up {thinkcentre.hostname}")
+
+    return f"{thinkcentre.hostname} had ben woken up"
 
 
 if __name__ == "__main__":
