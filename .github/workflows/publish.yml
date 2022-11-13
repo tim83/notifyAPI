@@ -1,7 +1,9 @@
 name: Publish container
 
 # Run workflow on tags starting with v (eg. v2, v1.2.0)
-on: [release]
+on:
+  release:
+    types: [published]
 
 jobs:
   publish:
