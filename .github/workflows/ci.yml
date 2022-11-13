@@ -71,8 +71,9 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           repository: tim83/notify_api
           builder: ${{ steps.buildx.outputs.name }}
+          push: true
           tags: |
-            ${{ github.ref }}
+            ${{ env.GITHUB_SHA }}
             latest
           platforms: linux/amd64,linux/arm64,linux/arm
           cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/caddy-cloudflare:buildcache
