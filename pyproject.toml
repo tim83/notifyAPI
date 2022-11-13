@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "notify_api"
-version = "0.2.9"
+version = "0.2.10"
 description = ""
 authors = ["Tim Mees <tim.mees83@gmail.com>"]
 readme = "README.md"
