@@ -48,14 +48,14 @@ jobs:
     runs-on: "ubuntu-latest"
     concurrency: release
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python
         with:
           python-version: "3.10"
       - name: Run image
-        uses: abatilo/actions-poetry@v2.0.0
+        uses: abatilo/actions-poetry
         with:
           poetry-version: "1.1.8"
       - name: Create python semantic release
