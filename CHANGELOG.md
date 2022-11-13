@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.2 (2022-11-13)
+### Fix
+* **publish.yml:** Attempt #102 ([`32417a1`](https://github.com/tim83/notify_api/commit/32417a1f4b9fdead250b18712a4dec1effc2a2e1))
+
 ## v0.2.1 (2022-11-13)
 ### Fix
 * **publish.yml:** Attempt #101 ([`ca84cc9`](https://github.com/tim83/notify_api/commit/ca84cc935f4d7c0a88fbd99c6dd40a037b2bbb5a))
