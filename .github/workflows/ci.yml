@@ -6,12 +6,12 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - uses: actions/checkout@v3
+      - name: Run image
+        uses: abatilo/actions-poetry@v2.1.6
       - uses: actions/setup-python@v3
         with:
           python-version: "3.10"
           cache: 'poetry'
-      - name: Run image
-        uses: abatilo/actions-poetry@v2.1.6
       - name: Install dependencies
         run: poetry install
       - name: Run black
@@ -30,12 +30,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
+      - name: Run image
+        uses: abatilo/actions-poetry@v2.1.6
       - uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
           cache: 'poetry'
-      - name: Run image
-        uses: abatilo/actions-poetry@v2.1.6
       - name: Install dependencies
         run: poetry install
       - name: Run tests
@@ -48,12 +48,12 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      - name: Run image
+        uses: abatilo/actions-poetry@v2.1.6
       - uses: actions/setup-python@v3
         with:
           python-version: "3.10"
           cache: 'poetry'
-      - name: Run image
-        uses: abatilo/actions-poetry@v2.1.6
       - name: Create python semantic release
         uses: relekang/python-semantic-release@master
         with:
