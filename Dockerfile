@@ -1,4 +1,4 @@
-FROM docker.io/library/python:3-bulleye
+FROM docker.io/library/python:3-bullseye
 
 COPY . /app
 
