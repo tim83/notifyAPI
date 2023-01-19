@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.0 (2022-12-06)
+### Feature
+* **Dockerfile:** Install wakeonlan ([`1f17502`](https://github.com/tim83/notify_api/commit/1f175021f30ac5986b6ee77a06cfbb9797619fb7))
+
 ## v0.2.14 (2022-11-13)
 ### Fix
 * **ci.yml:** Attempt #113 ([`ab9ca22`](https://github.com/tim83/notify_api/commit/ab9ca22015a521b16d73305f3dd695e8741dfdce))
