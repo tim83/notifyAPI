@@ -47,8 +47,3 @@ select = [
     # Flake8-bugbear
     "B"
 ]
-# Never enforce `E501` (line length violations).
-ignore = ["E501"]
-
-[tool.pylint.messages_control]
-disable = "cyclic-import,line-too-long"
