@@ -14,15 +14,12 @@ sshtools = {git = "https://github.com/tim83/sshtools"}
 
 
 [tool.poetry.dev-dependencies]
-flake8 = ">=5.0.4"
-flake8-bugbear = ">=22.10.27"
-flake8-docstrings = ">=1.6.0"
-darglint = ">=1.8.1"
 black = ">=22.10.0"
-isort = ">=5.10.1"
 pylint = ">=2.15.5"
 pytest = ">=7.2.0"
 pre-commit = ">=2.20.0"
+toml = ">=0.10.2"
+ruff = ">=0.0.256"
 
 [build-system]
 requires = ["poetry-core"]
@@ -36,3 +33,22 @@ branch = "master"
 upload_to_pypi = false
 upload_to_release = true
 build_command = "pip install poetry && poetry build"
+
+[tool.ruff]
+line-length = 88
+select = [
+    # Pyflakes
+    "F",
+    # Pycodestyle
+    "E",
+    "W",
+    # isort
+    "I",
+    # Flake8-bugbear
+    "B"
+]
+# Never enforce `E501` (line length violations).
+ignore = ["E501"]
+
+[tool.pylint.messages_control]
+disable = "cyclic-import,line-too-long"
