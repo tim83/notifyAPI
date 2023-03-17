@@ -101,4 +101,6 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/${{ github.repository_owner }}/notify_api:latest
+          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/notify_api:buildcache
+          cache-to: type=registry,ref=ghcr.io/${{ github.repository_owner }}/notify_api:buildcache,mode=max
           platforms: linux/arm/v7
