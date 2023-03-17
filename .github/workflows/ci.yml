@@ -1,9 +1,6 @@
 name: CI
 on: [ push ]
 
-name: CI
-on: [ push ]
-
 jobs:
   code-quality:
     runs-on: "ubuntu-latest"
